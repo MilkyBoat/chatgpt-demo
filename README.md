@@ -4,7 +4,9 @@ English | [简体中文](./README.zh-CN.md)
 
 A demo repo based on [OpenAI GPT-3.5 Turbo API.](https://platform.openai.com/docs/guides/chat)
 
-**🍿 Live preview**: https://chatgpt.ddiu.me
+**🍿 Live preview**: https://chat.milkyship.cn 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4545ff93-4eac-4305-bde4-525e36209d1d/deploy-status)](https://app.netlify.com/sites/luczydoge/deploys)
 
 > ⚠️ Notice: Our API Key limit has been exhausted. So the demo site is not available now.
 
