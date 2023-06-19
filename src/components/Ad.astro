@@ -1,0 +1,23 @@
+<ad id='ad-container'>
+    <p id="ad-toggle">本网站将会一直保持免费，但是所使用的OpenAI API会持续产生费用。如果本网站帮助到了你，并且你希望作者能持续维护下去，可以自愿打赏一下我😘。点击这里可以查看我的支付宝收款码</p>
+    <div id="image-container">
+      <img src="/recv.jpeg" alt="支付宝收款码">
+    </div>
+</ad>
+
+<script>
+const container = document.getElementById('image-container')
+const image = container.querySelector('img')
+container.style.display = 'none'
+image.style.transform = 'scale(0)'
+
+document.getElementById('ad-toggle').addEventListener('click', () => {
+  if (container.style.display === 'none') {
+    container.style.display = 'block'
+    image.style.transform = 'scale(1)'
+  } else {
+    container.style.display = 'none'
+    image.style.transform = 'scale(0)'
+  }
+})
+</script>

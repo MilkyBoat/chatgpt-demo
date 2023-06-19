@@ -4,11 +4,15 @@
 
 一个基于 [OpenAI GPT-3.5 Turbo API](https://platform.openai.com/docs/guides/chat) 的 demo。
 
+<<<<<<< Updated upstream
 **🍿 在线预览**: https://chatgpt.ddiu.me
 
 **🏖️ V2 版本 (Beta)**: https://v2.chatgpt.ddiu.me
 
 > ⚠️ 注意：我们的 API 密钥限制已用尽。所以演示站点现在不可用。
+=======
+**🍿 在线预览**: https://chat.milkyship.cn 
+>>>>>>> Stashed changes
 
 ![chat-logo](https://cdn.staticaly.com/gh/yzh990918/static@master/chat-logo.webp)
 
