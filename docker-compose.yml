@@ -2,7 +2,7 @@ version: '3'
 
 services:
   chatgpt-demo:
-    image: MilkyBoat/chatgpt-demo:latest
+    image: luczydoge/chatgpt-demo:latest
     container_name: chatgpt-demo
     restart: always
     ports:

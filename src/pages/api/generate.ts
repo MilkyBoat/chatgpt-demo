@@ -3,6 +3,7 @@ import { ProxyAgent, fetch } from 'undici'
 // #vercel-end
 import { generatePayload, parseOpenAIStream } from '@/utils/openAI'
 import { verifySignature } from '@/utils/auth'
+import { countTokens } from '@/utils/token'
 import type { APIRoute } from 'astro'
 
 const apiKey = import.meta.env.OPENAI_API_KEY
@@ -41,6 +42,7 @@ export const post: APIRoute = async(context) => {
     initOptions.dispatcher = new ProxyAgent(httpsProxy)
   // #vercel-end
 
+  countTokens(messages)
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
   const response = await fetch(`${baseUrl}/v1/chat/completions`, initOptions).catch((err: Error) => {
