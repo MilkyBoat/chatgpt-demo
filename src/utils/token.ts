@@ -12,7 +12,8 @@ export const countTokens = async(messages: [{ role, content }]) => {
     const contentTokens = encode(msgContent)
     tokenCount = tokenCount + contentTokens.length
   }
+  const date = new Date()
   // eslint-disable-next-line no-console
-  console.log('msg round: ', messages.length, ', token: ', tokenCount)
+  console.log(`[${date.toISOString()}] msg round: ${messages.length}, token: ${tokenCount}`)
   return tokenCount
 }
