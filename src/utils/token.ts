@@ -1,7 +1,7 @@
 import { encode } from 'gpt-3-encoder'
 import { model } from './openAI'
 
-export const countTokens = async(messages: [{ role, content }]) => {
+export const countTokens = async(messages: { role, content }[]) => {
   // this package is only suitable for gpt3
   if (!model.startsWith('gpt-3'))
     return -1

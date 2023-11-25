@@ -36,13 +36,19 @@ export const post: APIRoute = async(context) => {
       },
     }), { status: 401 })
   }
-  const initOptions = generatePayload(apiKey, messages)
+
+  console.log(messages)
+  const msg = sliceMessages(messages)
+  countTokens(msg)
+
+  console.log(msg)
+
+  const initOptions = generatePayload(apiKey, msg)
   // #vercel-disable-blocks
   if (httpsProxy)
     initOptions.dispatcher = new ProxyAgent(httpsProxy)
   // #vercel-end
 
-  countTokens(messages)
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
   const response = await fetch(`${baseUrl}/v1/chat/completions`, initOptions).catch((err: Error) => {
@@ -56,4 +62,16 @@ export const post: APIRoute = async(context) => {
   }) as Response
 
   return parseOpenAIStream(response) as Response
+}
+
+function sliceMessages(messages: { role, content }[]) {
+  const n = 4
+  if (messages.length > n) {
+    if (messages[0].role === 'system') {
+      const msg = messages.slice((-n) + 1)
+      msg.unshift(messages[0])
+      return msg
+    } else { return messages.slice(-n) }
+  }
+  return messages
 }
