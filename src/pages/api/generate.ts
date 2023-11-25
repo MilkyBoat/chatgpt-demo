@@ -68,10 +68,12 @@ function sliceMessages(messages: { role, content }[]) {
   const n = 4
   if (messages.length > n) {
     if (messages[0].role === 'system') {
-      const msg = messages.slice((-n) + 1)
+      const msg = messages.slice(-n)
       msg.unshift(messages[0])
       return msg
-    } else { return messages.slice(-n) }
+    } else {
+      return messages.slice(-n)
+    }
   }
   return messages
 }
